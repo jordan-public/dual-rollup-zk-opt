@@ -1,7 +1,7 @@
 # on-chain-zk-prover
 On-chain so called "zero knowledge" prover (not just verifier).
 
-## Debunking "Zero-Knowledge" (ZK) proofs
+## Debunking the definition "Zero-Knowledge" (ZK) proofs
 
 Let us define what the common conception of zero-knowledge proof $p$ is:
 
@@ -21,5 +21,21 @@ from just knowing $p$, $I_{public}$ (and of course $V_{knowledge}$, for the spec
 
 There are cryptographic proof systems such as zk-SNARK, zk-STARK, PLONK, etc. which can convince the verifier with
 extremely high likelyhood, making it computationally next-to-impossible to convince the verifier into false positive
-information.
+information. The $knowledge$ in these cryptographic proof systems is described as a set of constraints, which the
+constructor of the prover $P_{knowledge}$ and verifier $V_{knowledge}$ can write in a specific language such as Circom,
+Zokrates, Noir etc.
+
+Let us distinguish between "zero-knowledge", "some-knowldge" and "validity" proofs:
+
+### True Zero-Knowledge proofs
+
+If in the above definition there is no public input supplied $I_{public} = \emptyset$, let's call that a "true zero-knowledge" proof.
+
+Example (fictitious):
+
+Alice proved that $P \neq NP$, by constructing using a diagonalization method a problem solvable in NP-time which does not belong in the set P of problems solvable in P-time (Don't get excited, this is a fictitious example). 
+
+### Some-Knowledge proofs
+
+### Validity proofs
 
