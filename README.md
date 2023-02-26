@@ -12,7 +12,7 @@ prover requires more computational resources, and as such is running in a Cartes
 We deploy Aztec PLONK Validity Proofs written in Noir,
 into Cartesi virtual machine executable provers and EVM verifiers.
 
-## Debunking the definition "Zero-Knowledge" (ZK) proofs
+## Debunking the "Zero-Knowledge" (ZK) terminology
 
 > Let us define what the common conception of zero-knowledge proof $p$ of some theorem $T$ is:
 >
