@@ -9,6 +9,9 @@ Running the verifier on Ethereum Virtual Machine (EVM) is relatively
 inexpensive and feasible for many applications. However, running the
 prover requires more computational resources, and as such is running in a Cartesi Rollup.
 
+We deploy Aztec PLONK Validity Proofs written in Noir,
+into Cartesi virtual machine executable provers and EVM verifiers.
+
 ## Debunking the definition "Zero-Knowledge" (ZK) proofs
 
 > Let us define what the common conception of zero-knowledge proof $p$ of some theorem $T$ is:
@@ -91,7 +94,7 @@ Here is how the entire system works:
 
 - Setup:
     - The user writes the prover + verifier in Noir. 
-    - Noir code is compiled into WASM prover and EVM verifier. 
+    - Noir code is compiled into WASM PLONK prover and EVM PLONK verifier. 
     - The prover WASM code along with WASM interpreter for RISC-V is submitted to the Cartesi as part of the virtual machine instance initialization.
     - The verifier is deployed to Ethereum (L1) as smart contract.
 - Operation:
