@@ -7,7 +7,7 @@ We are providing a proof-of-concept mechanism of running zero-knowledge proofs (
 
 Running the verifier on Ethereum Virtual Machine (EVM) is relatively
 inexpensive and feasible for many applications. However, running the
-prover requires more computational resources, and as such is running in a Cartesi Rollup.
+prover requires more computational resources, and as such is running in a Cartesi virtual machine.
 
 We deploy Aztec PLONK Validity Proofs written in Noir,
 into Cartesi virtual machine executable provers and EVM verifiers.
@@ -84,9 +84,9 @@ If $I_{private} = \emptyset$ the proof becomes a "Validity Proof". We are not tr
 >
 > zkSync is a Layer 2 (L2) blockchain which allows trustless transfer of Layer 1 (L1) assets, in this case Ethereum, in both directions, using a rollup. zkSync allows execution of EVM code (well, EVM-compatible) on the L2. Snapshots of the L2 EVM state are recorded, and state roll-ups are transferred to L1 along with a Validity Proof that correct execution of the EVM on L2 caused a transition of its previous L2 EVM state to the current L2 EVM state. This allows fast and inexpensive (gas-efficient) transactions on L2, with ability to transfer the assets back to L1 without waiting for a long time (as in the case of Optimistic Rollups where a grace period has to be allowed for potential validity challenges). The provers in this example are the zkSync validators nodes, while the verifier is running on the L1 EVM (because it's succinct and relatively inexpensive as such). There is no secret input, as everything is transparent, and the validity proofs are not trying to hide anything, but merely transfer proofs of correct execution from L2 to L1, giving the users a trustless (no need to trust anyone) experience.
 
-*Importantly*, both the prover and the verifier of the Validity Proofs could concievably run on-chain, but there is one problem: the prover's job is computationally intensive.
+*Importantly*, as there are no secrets ($I_{private} = \emptyset$), both the prover and the verifier of the Validity Proofs could concievably run on-chain, but there is one problem: the prover's job is computationally intensive.
 
-## Prover on Cartesi Rollup
+## Prover on Cartesi
 
 The prover is too computationally (and memory) intensive to  run in an EVM. However Cartesi provides L2 rollups which execute RISC-V virtual machines with richer possibility of computational and memory  resources. This is made possible because not every validator in Cartesi is forced to run every RISC-V virtual machine instance. Whoever validator can challenge the correctness of any such virtual machine instance at their own expense in exchange for fraud proof reward. 
 
