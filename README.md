@@ -16,7 +16,7 @@ prover requires more computational resources, and as such is running in a Cartes
 > $p = P_{T}(I_{public}, I_{private})$
 >
 > in which the Prover $P$ using the publicly known information (inputs) $I_{public}$ and private inputs $I_{private}$
-generates a proof $p$ of a specific $knowledge$, so that there is a Verifier for that $knowledge$ which can be undeniably
+generates a proof $p$ of a specific $T$, so that there is a Verifier for that $T$ which can be undeniably
 convinced (true or false) in the truth of the knowledge:
 >
 > ${convinced} = V_{T}(I_{public})$
@@ -25,12 +25,12 @@ convinced (true or false) in the truth of the knowledge:
 Some nice practical features of such prooving system:
 - Such proof $p$ should be non-interactive, namely, it can be calculated by the prover at once, and the
 verifier does not need to communicate to the prover, but instead complete the verification independently
-from just knowing $p$, $I_{public}$ (and of course $V_{T}$, for the specific $knowledge$). 
+from just knowing $p$, $I_{public}$ (and of course $V_{T}$, for the specific $T$). 
 - $p$ should be Succinct - short and verifiable without burning a lot of resources (computation, memory). 
 
 There are cryptographic proof systems such as zk-SNARK, zk-STARK, PLONK, etc. which can convince the verifier with
 extremely high likelyhood, making it computationally next-to-impossible to convince the verifier into false positive
-information. The $knowledge$ in these cryptographic proof systems is described as a set of constraints, which the
+information. The $T$ in these cryptographic proof systems is described as a set of constraints, which the
 constructor of the prover $P_{T}$ and verifier $V_{T}$ can write in a specific language such as Circom,
 Zokrates, Snarky.js, Noir etc.
 
