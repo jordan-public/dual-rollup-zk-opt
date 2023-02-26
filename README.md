@@ -43,7 +43,7 @@ If in the above definition there is no public input supplied $I_{public} = \empt
 
 >Example (fictitious):
 >
-> Alice proved that $P \neq NP$, by constructing using a diagonalization method a problem counter-example $E$, solvable in NP-time which does not belong to the set P of problems solvable in P-time (Don't get excited, this is a fictitious example). She constructs a  pure zero-knowledge proof 
+> Alice proved that $P \neq NP$, by constructing using a diagonalization method a problem counter-example $E$, solvable in NP-time which does not belong to the set P of problems solvable in P-time (don't get excited, this is a fictitious example). She constructs a  pure zero-knowledge proof 
 >
 > $p = P_{P \neq NP}(\emptyset, \{E\})$
 >
