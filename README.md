@@ -30,11 +30,11 @@ from just knowing $p$, $I_{public}$ (and of course $V_{T}$, for the specific $T$
 
 There are cryptographic proof systems such as zk-SNARK, zk-STARK, PLONK, etc. which can convince the verifier with
 extremely high likelyhood, making it computationally next-to-impossible to convince the verifier into false positive
-information. The $T$ in these cryptographic proof systems is described as a set of constraints, which the
+information. $T$ in these cryptographic proof systems is described as a set of constraints, which the
 constructor of the prover $P_{T}$ and verifier $V_{T}$ can write in a specific language such as Circom,
 Zokrates, Snarky.js, Noir etc.
 
-Let us distinguish between "zero-knowledge", "some-knowldge" and "validity" proofs:
+Let us distinguish between "pure zero-knowledge", "some-knowldge" and "validity" proofs:
 
 ### Pure Zero-Knowledge Proofs
 
