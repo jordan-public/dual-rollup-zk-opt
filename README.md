@@ -95,7 +95,7 @@ Here is how the entire system works:
 - Setup:
     - The user writes the prover + verifier in Noir. 
     - Noir code is compiled into WASM PLONK prover and EVM PLONK verifier. 
-    - The prover WASM code along with WASM interpreter for RISC-V is submitted to the Cartesi as part of the virtual machine instance initialization.
+    - The prover WASM prover code along with WASM interpreter for RISC-V is submitted to the Cartesi as part of the virtual machine instance initialization.
     - The verifier is deployed to Ethereum (L1) as smart contract.
 - Operation:
     - Inputs are supplied from the front-end to the Cartesi rollup and picked up by the Cartesi backend.
