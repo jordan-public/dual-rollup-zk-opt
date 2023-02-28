@@ -76,7 +76,7 @@ def handle_advance(data):
     try:
         logger.info("Adding notice")
         # get proof
-        proof = subprocess.getoutput("nargo prove", cwd='../../sampleckt')
+        proof = subprocess.getoutput("cd ../sampleckt && nargo prove")
         proof = proof.split("\n",2)[1]     
         print("Proof")
         print(proof) 
