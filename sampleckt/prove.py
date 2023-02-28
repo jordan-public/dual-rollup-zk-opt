@@ -1,4 +1,4 @@
-#!python3
+#!/home/gitpod/.pyenv/shims/python3
 import subprocess
-output = subprocess.getoutput("nargo prove theProof")
+output = subprocess.getoutput("nargo prove")
 print(output)
