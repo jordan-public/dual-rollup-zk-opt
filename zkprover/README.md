@@ -11,3 +11,11 @@ pip install -r requirements.txt
 ROLLUP_HTTP_SERVER_URL="http://127.0.0.1:5004" python3 zkprover.py
 ```
 
+```
+cd zkprover/frontend-console
+yarn
+yarn build
+
+yarn start input send --payload "zkclaim"
+yarn start notice list
+```
