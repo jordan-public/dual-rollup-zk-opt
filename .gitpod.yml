@@ -8,3 +8,4 @@ tasks:
       cp -r $HOME/.nargo/bin/noir-lang/* "$HOME/.config/noir-lang/"
       echo 'export PATH=$PATH:$HOME/.nargo/bin' >> ~/.bashrc
       source ~/.bashrc
+      cd sampleckt && nargo contract
