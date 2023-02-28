@@ -80,7 +80,7 @@ def handle_advance(data):
         proof = proof.split("\n",2)[1]     
         print("Proof")
         print(proof) 
-        response = requests.post(rollup_server + "/notice", json={"payload": data["payload"] + str2hex("\n"+proof[2:])}) 
+        response = requests.post(rollup_server + "/notice", json={"payload": data["payload"] + (str2hex("\n"+proof)[2:])}) 
 #        response = requests.post(rollup_server + "/notice", json={"payload": data["payload"]}) 
         logger.info(f"Received notice status {response.status_code} body {response.content}")
 
