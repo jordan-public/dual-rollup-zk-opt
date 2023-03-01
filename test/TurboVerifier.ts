@@ -49,6 +49,7 @@ describe("TurboVerifier", function () {
         abi.x = 42;
 
         const proof = await create_proof(prover, acir, abi);
+        console.log(proof.toString('hex'))
         const sc_verified = await verifierContract.verify(proof);
 
         expect(sc_verified).eq(true);

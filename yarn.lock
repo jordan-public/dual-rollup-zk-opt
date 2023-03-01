@@ -508,6 +508,11 @@
     threads "1.7.0"
     tslib "^2.0.0"
 
+"@noir-lang/noir-source-resolver@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@noir-lang/noir-source-resolver/-/noir-source-resolver-1.0.0.tgz#5c19579694e665e46380ee361e502a10b7c08386"
+  integrity sha512-4ywoMyxMeZgDl2dXVm4IUpEaR86nIi+dLRNh20xzYue4zDdidNxCZC4jFZlMPt2gjQ0vbKI8TB3LtDrIIjufHg==
+
 "@noir-lang/noir_wasm@^0.10.0":
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/@noir-lang/noir_wasm/-/noir_wasm-0.10.0.tgz#9223c2ab92cf24da7e483c4131179a4d62a59c19"

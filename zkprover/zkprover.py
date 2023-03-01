@@ -76,11 +76,10 @@ def handle_advance(data):
     try:
         logger.info("Adding notice")
         # get proof
-        proof = subprocess.getoutput("cd ../sampleckt && yarn prove")
-        proof = proof.split("\n",2)[1]     
+        proof = subprocess.getoutput("cd .. && npx hardhat prove")
         print("Proof")
         print(proof) 
-        response = requests.post(rollup_server + "/notice", json={"payload": data["payload"] + (str2hex("\n"+proof)[2:])}) 
+        response = requests.post(rollup_server + "/notice", json={"payload": str2hex(proof)}) 
 #        response = requests.post(rollup_server + "/notice", json={"payload": data["payload"]}) 
         logger.info(f"Received notice status {response.status_code} body {response.content}")
 

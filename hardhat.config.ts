@@ -1,7 +1,14 @@
 import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-preprocessor";
-import { HardhatUserConfig } from "hardhat/config";
+import { HardhatUserConfig, task } from "hardhat/config";
+
+import prove from "./tasks/prove";
+
+task("prove", "Prove it ...").setAction(async () => {
+  await prove()
+});
+
 
 const config: HardhatUserConfig = {
   solidity: {
