@@ -26,6 +26,7 @@ Third shell - front-end:
 
 ```
 yarn
+npx hardhat compile
 cd zkprover/frontend-console
 yarn
 yarn build
