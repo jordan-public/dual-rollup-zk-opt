@@ -25,6 +25,7 @@ ROLLUP_HTTP_SERVER_URL="http://127.0.0.1:5004" python3 zkprover.py
 Third shell - front-end:
 
 ```
+yarn
 cd zkprover/frontend-console
 yarn
 yarn build
