@@ -76,7 +76,7 @@ def handle_advance(data):
     try:
         logger.info("Adding notice")
         # get proof
-        proof = subprocess.getoutput("cd .. && npx hardhat prove")
+        proof = subprocess.getoutput("cd .. && npx hardhat gen-proof")
         print("Proof")
         print(proof) 
         response = requests.post(rollup_server + "/notice", json={"payload": str2hex(proof)}) 

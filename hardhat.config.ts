@@ -21,7 +21,7 @@ const config: HardhatUserConfig = {
     },
   },
   paths: {
-    sources: "./sampleckt/contract", // Use ./src rather than ./contracts as Hardhat expects
+    sources: "./sampleckt/contract",
   },
 };
 
