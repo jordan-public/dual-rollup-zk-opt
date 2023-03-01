@@ -1,13 +1,15 @@
+import { HardhatUserConfig, task } from "hardhat/config"; 
 import "@nomiclabs/hardhat-waffle";
-import "@typechain/hardhat";
 import "hardhat-preprocessor";
-import { HardhatUserConfig, task } from "hardhat/config";
+import "@typechain/hardhat";
 
+import verify from "./tasks/verify";
 import prove from "./tasks/prove";
 
-task("prove", "Prove it ...").setAction(async () => {
-  await prove()
-});
+
+task("gen-proof", "Generate proof for the local Noir circuit").setAction(prove);
+task("verify", "Verify that the proof(passed in first param) is valid")
+  .setAction(async (_,hre) => verify(hre));
 
 
 const config: HardhatUserConfig = {
