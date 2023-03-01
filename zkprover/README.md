@@ -31,6 +31,12 @@ cd zkprover/frontend-console
 yarn
 yarn build
 
+# Initiate L2 -> L1 claimi
 yarn start input send --payload "zkclaim"
+
+# See proof (as part of claim)
 yarn start notice list
+
+# Deploy verification contract and call it to check the proof on Ethereum (Hardhat)
+yarn start notice list > out && npx hardhat verify
 ```
