@@ -1,6 +1,6 @@
-import { setup_generic_prover_and_verifier, create_proof } from '@noir-lang/barretenberg/dest/client_proofs';
-import { compile } from '@noir-lang/noir_wasm';
-import path from "path";
+const { setup_generic_prover_and_verifier, create_proof } = require("@noir-lang/barretenberg/dest/client_proofs");
+const { compile } = require("@noir-lang/noir_wasm");
+const path = require("path");
 
 
 async function run() {
