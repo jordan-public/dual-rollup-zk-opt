@@ -1,4 +1,4 @@
-const { setup_generic_prover_and_verifier, create_proof } = require("@noir-lang/barretenberg/dest/client_proofs");
+const { setup_generic_prover_and_verifier, create_proof } = require("@noir-lang/barretenberg").dest.client_proofs;
 const { compile } = require("@noir-lang/noir_wasm");
 const path = require("path");
 
