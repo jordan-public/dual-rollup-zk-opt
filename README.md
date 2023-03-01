@@ -1,9 +1,13 @@
 # on-chain-zk-prover
 On-chain so called "zero knowledge" prover (not just verifier).
 
+
+
+
+## Demo
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#/https://github.com/jordan-public/dual-rollup-zk-opt/)
 
-
+See instructions [here](zkprover/README.md).
 ## Abstract
 
 We are providing a proof-of-concept mechanism of running zero-knowledge proofs (actually Validity Proofs) where both the Prover and the Verifier can run on a public blockchain.

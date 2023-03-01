@@ -1,13 +1,18 @@
-# How to run the Cartesi ZK Validity Prover
+# Demo: How to run the Cartesi ZK Validity Prover
 
-First shell:
+Open the demo environment in GitPod:
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#/https://github.com/jordan-public/dual-rollup-zk-opt/)
+
+Open 3 ssh connections into the GitPod demo as follows:
+
+First shell - Hardhat Ethereum node, Cartesi Rollups:
 
 ```shell
 cd zkprover
 docker compose -f ./docker-compose.yml -f ./docker-compose.override.yml -f ./docker-compose-host.yml up
 ```
 
-Second shell:
+Second shell - Cartesi Machine in Host mode:
 
 ```shell
 cd zkprover
@@ -17,7 +22,7 @@ pip install -r requirements.txt
 ROLLUP_HTTP_SERVER_URL="http://127.0.0.1:5004" python3 zkprover.py
 ```
 
-Third shell:
+Third shell - front-end:
 
 ```
 cd zkprover/frontend-console
