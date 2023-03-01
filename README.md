@@ -1,16 +1,15 @@
-# on-chain-zk-prover
-On-chain so called "zero knowledge" prover (not just verifier).
-
-
-
-
+# dual-rollup-zk-opt
 ## Demo
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#/https://github.com/jordan-public/dual-rollup-zk-opt/)
 
 See instructions [here](zkprover/README.md).
 ## Abstract
 
-We are providing a proof-of-concept mechanism of running zero-knowledge proofs (actually Validity Proofs) where both the Prover and the Verifier can run on a public blockchain.
+We are providing a proof-of-concept mechanism of Dual Rollup: ZK Rollup and Optimistic Rollup in one. Cartesi already provides Optimistic Rollup functionality. In addition, we run ZK Rollup functionality, which can be "claimed" at any time by anyone.
+If the Optimistic Rollup rolls back as a result of a fraud proof,
+next time it proceeds is going to be from the new Ethereum -Layer 1 (L1) state, which fits well.
+
+To achieve this we run zero-knowledge proofs (actually Validity Proofs) where both the Prover and the Verifier can run on a public blockchain.
 
 Running the verifier on Ethereum Virtual Machine (EVM) is relatively
 inexpensive and feasible for many applications. However, running the
@@ -18,6 +17,10 @@ prover requires more computational resources, and as such is running in a Cartes
 
 We deploy Aztec PLONK Validity Proofs written in Noir,
 into Cartesi virtual machine executable provers and EVM verifiers.
+
+The limitation (as a result of feasibility) is that the Layer 2 ZK Rollup is running an EVM. Since this is a proof of concept, instead of proofs of state transitions of the EVM, we are deploying a dummy
+Noir program, just to show that this is feasible. In reality, the
+claim would have to include the new EVM state (or difference from the previous) along with the proof that the new state resulted from execution of the sequence of EVM instructions on L2.
 
 ## Debunking the "Zero-Knowledge" (ZK) terminology
 
@@ -113,3 +116,6 @@ Here is how the entire system works:
 ## Result
 
 The end result of this proof-of-concept is the ability to generate effective changes on L1 without waiting for the end of the Cartesi epoch.
+
+The L2 EVM inside Cartesi VM would inherit the advantages from both Optimistic and ZK Rollups. If an important transfer such as large amount of funds is being transferred, then the ZK Rollup functionality would be used. On the other hand, if the outcome is not of great importance, like a casual chess game result, then Rollup
+functionality would be left to the built-in Optimistic Rollup on Cartesi. 
