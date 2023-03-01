@@ -1,4 +1,3 @@
-
 // SPDX-License-Identifier: GPL-2.0-only
 // Copyright 2020 Spilsbury Holdings Ltd
 
@@ -43,8 +42,7 @@ contract TurboVerifier {
         external
         view
         returns (bool result)
-    {
-
+    {   
         Types.VerificationKey memory vk = get_verification_key();
         uint256 num_public_inputs = vk.num_inputs;
 
@@ -3433,5 +3431,3 @@ library Transcript {
         self.current_challenge = challenge;
     }
 }
- 
-    
