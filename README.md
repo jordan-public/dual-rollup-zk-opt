@@ -3,9 +3,23 @@
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#/https://github.com/jordan-public/dual-rollup-zk-opt/)
 
 See instructions [here](zkprover/README.md).
+
+## Where can this run
+
+We are running our demo on a development installation on a GitPod Linux machine, which runs Cartesi Rollup, Cartesi VM in Host Mode and a Hardhat EVM instance. However, this can run wherever Cartesi has installations, apparently as follows at the time of this writing:
+- Ethereum (mainnet)
+- BSC Testnet
+- Optimism Görli
+- Arbitrum Görli
+- Polygon Mumbai
+- Görli
+- Gnosis Chiado
+
+In addition to our test environment running in Host Mode, any of the above should have a WASM interpreter installed inside the (appropriate version of) Cartesi VM.
+
 ## Abstract
 
-We are providing a proof-of-concept mechanism of Dual Rollup: ZK Rollup and Optimistic Rollup in one. Cartesi already provides Optimistic Rollup functionality. In addition, we run ZK Rollup functionality, which can be "claimed" at any time by anyone.
+We are providing a working proof-of-concept mechanism of Dual Rollup: ZK Rollup and Optimistic Rollup in one. Cartesi already provides Optimistic Rollup functionality. In addition, we run ZK Rollup functionality, which can be "claimed" at any time by anyone.
 If the Optimistic Rollup rolls back as a result of a fraud proof,
 next time it proceeds is going to be from the new Ethereum -Layer 1 (L1) state, which fits well.
 
@@ -75,11 +89,9 @@ If not all knowledge is secret ($I_{public} \neq \emptyset$) but only some of it
 > Example (this is a real example): Tornado.cash
 >
 > This is the most popular practical zero-knowledge web3 application. The user obtains privacy by hiding the trace of asset transfers via smart contracts that serve the purpose of "mixers". The user can deposit assets (1 ETH, for example) into one of it's smart contracts and generate a proof of deposit $p$. 
-> This deposit can be withdrawn into any (unrelated) address, but to assure that the withdrawal is allowed only once per deposit, the contract will dispense the funds (the 1 ETH in our example) upon successful verification of the proof of deposit, along with a "nullifier". The nullifier is a shorter unique representation of the proof $p$, and it is recorded into the contract upon withdrawal in order to prevent the user from withdrawing the same deposited funds more than once. 
+> This deposit can be withdrawn into any (unrelated) address, but to assure that the withdrawal is allowed only once per deposit, the contract will dispense the funds (the 1 ETH in our example) upon successful verification of the proof of deposit, along with a "nullifier". The nullifier is recorded upon withdrawal in order to prevent the user from withdrawing the same deposited funds more than once. 
 >
-> In this example, the secret input $I_{private}$ is the deposit transaction, and the public input the (Boolean) fact that the deposit
-was actually made. 
-
+> In this example, the secret input $I_{private}$ is the deposit transaction, and the public input the root of the Merkle Tree of nullifiers. 
 
 Some-Knowledge proofs are practical for blockchain use cases where the prover is off-chain, while the verifier is on-chain.
 
@@ -117,5 +129,16 @@ Here is how the entire system works:
 
 The end result of this proof-of-concept is the ability to generate effective changes on L1 without waiting for the end of the Cartesi epoch.
 
+Consequently, the following use cases are feasible:
+### Dual Rollup
 The L2 EVM inside Cartesi VM would inherit the advantages from both Optimistic and ZK Rollups. If an important transfer such as large amount of funds is being transferred, then the ZK Rollup functionality would be used. On the other hand, if the outcome is not of great importance, like a casual chess game result, then Rollup
 functionality would be left to the built-in Optimistic Rollup on Cartesi. 
+
+### Simple asset transfers 
+
+With proofs of deposit to L1 transfer contract (to L2) simple “impatient” L2 to L1 asset transfers upon request could be achieved.
+
+### Universal ZK Bridge
+
+Provided a guarantee of no **identical** blockchain replicas (including chain ID) so that each blockchain can be identified on-chain, **Universal ZK Bridge** can be developed using a simple
+zk-proof of deposit.

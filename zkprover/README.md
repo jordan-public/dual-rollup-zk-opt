@@ -31,7 +31,7 @@ cd zkprover/frontend-console
 yarn
 yarn build
 
-# Initiate L2 -> L1 claimi
+# Initiate L2 -> L1 claim
 yarn start input send --payload "zkclaim"
 
 # See proof (as part of claim)
