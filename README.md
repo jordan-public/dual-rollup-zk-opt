@@ -1,3 +1,5 @@
+[This project](https://app.buidlbox.io/projects/dual-rollup-zk-opt) won the second prize from [Cartesi](https://cartesi.io/) at [ETHDenver 2023](https://app.buidlbox.io/ethdenver/ethdenver-2023).
+
 # dual-rollup-zk-opt
 ## Demo
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#/https://github.com/jordan-public/dual-rollup-zk-opt/)
